@@ -1,0 +1,19 @@
+<div class="container">
+    <h1>Pokemon List</h1>
+     <div class="row text-center">
+         <div class="col-md-2">
+            <select [(ngModel)]="selectId" class="form-select">
+                 <option *ngFor="let pokemon of pokemons | filterPokemonPipe:'name':searchPokemon" value="{{pokemon.id}}">{{pokemon.name}}</option>
+            </select>
+         </div>
+         <div class="col-md-2">
+             <input type="text" [(ngModel)]="searchPokemon" class="form-control">
+         </div>
+         <div class="col-md-2">
+            <button class="form-control" (click)="go()">Go</button>
+         </div>
+     </div>
+        <div *ngIf="pokemonDetail">
+            <app-pokemon-info [pokemonDetail] = "pokemonDetail"></app-pokemon-info>
+        </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="card mt-4" style="width: 18rem;">
+    <img src="{{pokemonDetail.sprites.back_default}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">#{{pokemonDetail.id}}  {{pokemonDetail.name}}</h5>
+      <div class="card-text  m-1">
+            <li *ngFor="let item of pokemonDetail.abilities">{{item.ability.name}}</li>
+        </div>
+    </div>
+  </div>
